@@ -1,0 +1,6 @@
+random_numbers <- rnorm(100, mean = 0, sd = 1)
+cat("Random Numbers:\n")
+print(random_numbers)
+rounded_numbers <- round(random_numbers)
+cat("\nOccurrences of Rounded Values:\n")
+print(table(rounded_numbers))
