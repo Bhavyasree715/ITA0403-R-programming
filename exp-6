@@ -1,0 +1,18 @@
+numbers <- c(10, 20, 30, 40, 50)
+mat <- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2, byrow = TRUE)
+square <- function(x) {
+  return(x^2)
+}
+my_list <- list(
+  Vector = numbers,
+  Matrix = mat,
+  Function = square
+)
+print(my_list)
+cat("Vector:\n")
+print(my_list$Vector)
+cat("\nMatrix:\n")
+print(my_list$Matrix)
+cat("\nFunction:\n")
+print(my_list$Function)
+cat("\nSquare of 5 =", my_list$Function(5), "\n")
