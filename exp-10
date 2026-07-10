@@ -1,0 +1,31 @@
+exam_data <- data.frame(
+  Name = c("Alice", "Bob", "Charlie", "David", "Eva"),
+  Score = c(85, 90, 78, 88, 95),
+  Attempts = c(1, 2, 2, 1, 1),
+  Qualify = c(TRUE, TRUE, FALSE, TRUE, TRUE)
+)
+cat("Original Data Frame:\n")
+print(exam_data)
+cat("\nStructure:\n")
+str(exam_data)
+cat("\nSummary:\n")
+summary(exam_data)
+cat("\nScore Column:\n")
+print(exam_data$Score)
+cat("\nFirst Two Rows:\n")
+print(exam_data[1:2, ])
+new_row <- data.frame(
+  Name = "Frank",
+  Score = 82,
+  Attempts = 1,
+  Qualify = TRUE
+)
+exam_data <- rbind(exam_data, new_row)
+exam_data$Grade <- c("B", "A", "C", "B", "A", "B")
+cat("\nAfter Adding Row and Column:\n")
+print(exam_data)
+sorted_data <- exam_data[order(exam_data$Score, decreasing = TRUE), ]
+cat("\nSorted Data Frame (Score Descending):\n")
+print(sorted_data)
+write.csv(sorted_data, "exam_data.csv", row.names = FALSE)
+cat("\nData frame saved successfully as 'exam_data.csv'\n")
